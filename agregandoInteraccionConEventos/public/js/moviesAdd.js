@@ -10,11 +10,15 @@ window.onload = function(){
    // tp 2
 
    titulo.addEventListener('mouseover', function() {
-    this.style.color = 'red'
+    this.style.color = 'darkblue'
    });
 
-   let tituloSecreto = document.querySelector('#titulo');
-   let estadoSecreto = 0;
+   titulo.addEventListener('mouseout',() =>{
+      titulo.style.color = "black";
+  })
+
+   let tituloSecreto = document.getElementById('titulo');   
+   let state = 0;
 
    const checkKey = (key) => {
        switch (true) {
@@ -36,7 +40,8 @@ window.onload = function(){
             case key === 't' && state === 5:
                ++state
                break;
-            case key === '0' && state === 6:
+            case key === 'o' && state === 6:
+               state = 0
                 alert('SECRETO MAGICO')
                break; 
             default:
@@ -44,5 +49,9 @@ window.onload = function(){
                 break;       
        }
    }
+   
+   tituloSecreto.addEventListener('keyup', (e) =>{
+      checkKey(e.key)
+  })
 
 }
