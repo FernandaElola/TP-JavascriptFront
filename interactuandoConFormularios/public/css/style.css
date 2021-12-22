@@ -96,7 +96,7 @@ figure{
   border: solid 2px rgb(18, 182, 18);
  }
  .alert-warning {
-  border: solid 2px rgb(221, 174, 86);
+  color: rgb(221, 174, 86);
 }
 .error-form{
   font-size: 12px;
